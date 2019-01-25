@@ -71,8 +71,8 @@ then
 fi
 
 # Mount partitions
-bash -c "swapon /dev/$(echo $SYSTEM_DISK)1"
-bash -c "mount /dev/$(echo $SYSTEM_DISK)2 /mnt"
+bash -c "swapon /dev/$(echo $SYSTEM_DISK)2"
+bash -c "mount /dev/$(echo $SYSTEM_DISK)3 /mnt"
 
 # Enable DHCPD
 bash -c "dhcpd"
