@@ -2,8 +2,8 @@
 
 # System settings
 SYSTEM_DISK="sda"
-SYSTEM_SWAP_PARTITION_SIZE="16384M"		# 16GB for SWAP
-SYSTEM_ROOT_PARTITION_SIZE="51200M"		# 50GB for /
+SYSTEM_SWAP_PARTITION_SIZE="1024M"		# 1GB for SWAP
+SYSTEM_ROOT_PARTITION_SIZE="6144M"		# 6GB for /
 SYSTEM_HOME_PARTITION_SIZE=""			# - for /home
 
 # System language
@@ -11,16 +11,16 @@ SYSTEM_LOCALE_LANG="en_US.UTF-8 UTF-8"	# Localization
 SYSTEM_LANG="en_US.UTF-8"				# Language
 
 # Machine settings
-HOST_NAME="arch"						# Computer's name
+HOST_NAME="linux"						# Computer's name
 
 # User settings
-USER_NAME="username"
+USER_NAME="archer"
 USER_GROUP="audio,disk,network,optical,power,storage,video,rfkill,wheel"
 
 # Check if UEFI is enabled
 if ! ls /sys/firmware/efi;
 then
-	echo "Enable UEFI mode"
+	echo "Error: Installation only in UEFI mode"
 	exit 1
 fi
 
