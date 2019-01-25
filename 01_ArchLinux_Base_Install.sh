@@ -100,8 +100,8 @@ bash -c "passwd $USER_NAME"
 
 # Setup root privilages
 bash -c "echo > /etc/sudoers"
-bash -c "echo 'root ALL=(ALL) ALL' > /etc/sudoers"
-bash -c "echo '$USER_NAME ALL=(ALL) ALL' > /etc/sudoers"
+bash -c "echo 'root ALL=(ALL) ALL' >> /etc/sudoers"
+bash -c "echo '$USER_NAME ALL=(ALL) ALL' >> /etc/sudoers"
 
 # Cleanup section
 bash -c "exit"
