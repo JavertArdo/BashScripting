@@ -25,7 +25,8 @@ then
 fi
 
 (
-	echo o;
+	# Create GPT partition table
+	echo g;
 
 	# Boot partition
 	echo n;
@@ -58,6 +59,9 @@ fi
 		echo +$(echo $SYSTEM_HOME_PARTITION_SIZE);
 	fi
 
+	# Write changes
+	echo w;
+
 ) | fdisk /dev/$(echo $SYSTEM_DISK)
 
 # Format partitions
@@ -74,8 +78,14 @@ fi
 bash -c "swapon /dev/$(echo $SYSTEM_DISK)2"
 bash -c "mount /dev/$(echo $SYSTEM_DISK)3 /mnt"
 
-# Enable DHCPD
-bash -c "dhcpd"
+if [[ ! -z "$SYSTEM_HOME_PARTITION_SIZE" ]];
+then
+	if [[ ! -d "/mnt/home" ]];
+	then
+		bash -c "mkdir /mnt/home"
+	fi
+	bash -c "mount /dev/$(echo $SYSTEM_DISK)4 /mnt/home"
+fi
 
 # Install base system
 bash -c "pacstrap /mnt base"
