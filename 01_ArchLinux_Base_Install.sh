@@ -78,6 +78,12 @@ fi
 bash -c "swapon /dev/$(echo $SYSTEM_DISK)2"
 bash -c "mount /dev/$(echo $SYSTEM_DISK)3 /mnt"
 
+if [[ ! -d "/mnt/boot" ]];
+then
+	bash -c "mkdir /mnt/boot"
+fi
+bash -c "mount /dev/$(echo $SYSTEM_DISK)1 /mnt/boot"
+
 if [[ ! -z "$SYSTEM_HOME_PARTITION_SIZE" ]];
 then
 	if [[ ! -d "/mnt/home" ]];
