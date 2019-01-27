@@ -28,23 +28,22 @@ fi
 	# Create GPT partition table
 	echo g;
 
-	# Boot partition
+	# EFI partition
 	echo n;
-	echo p;
 	echo 1;
 	echo "";
 	echo +128M;
+	echo t;
+	echo 1;
 
 	# Swap partition
 	echo n;
-	echo p;
 	echo 2;
 	echo "";
 	echo +$(echo $SYSTEM_SWAP_PARTITION_SIZE);
 
 	# System partition
 	echo n;
-	echo p;
 	echo 3;
 	echo "";
 	echo +$(echo $SYSTEM_ROOT_PARTITION_SIZE);
@@ -53,7 +52,6 @@ fi
 	if [[ ! -z "$SYSTEM_HOME_PARTITION_SIZE" ]];
 	then
 		echo n;
-		echo p;
 		echo 4;
 		echo "";
 		echo +$(echo $SYSTEM_HOME_PARTITION_SIZE);
