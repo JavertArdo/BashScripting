@@ -11,13 +11,13 @@ then
 fi
 bash -c "mount -o loop $CLOVER_ISO_PATH /mnt/iso"
 
-if [[ ! -d "/mnt/efi" ]];
+if [[ ! -d "/mnt/boot" ]];
 then
-	bash -c "mkdir /mnt/efi"
+	bash -c "mkdir /mnt/boot"
 fi
-bash -c "mount /dev/$(echo $SYSTEM_DISK)1 /mnt/efi"
+bash -c "mount /dev/$(echo $SYSTEM_DISK)1 /mnt/boot"
 
-bash -c "rsync -r --info=progress2 /mnt/iso /mnt/efi"
+bash -c "rsync -r --info=progress2 /mnt/iso /mnt/boot/EFI"
 
 # Configure
 # TODO
