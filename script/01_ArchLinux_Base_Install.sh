@@ -24,6 +24,29 @@ then
 	exit 1
 fi
 
+# Clean selected disk
+PARTITIONS_COUNT=$(grep -c $(echo $SYSTEM_DISK)'[0-9]' /proc/partitions)
+if [[ $PARTITIONS_COUNT > 0 ]];
+then
+	(
+		if [[ $PARTITIONS_COUNT > 1 ]];
+		then
+			for i in {1..$PARTITIONS_COUNT..1}
+			do
+				echo d;
+				echo "";
+			done
+		fi
+
+		# Delete last partition
+		echo d;
+
+		# Write changes
+		echo w;
+
+	) | fdisk /dev/$(echo $SYSTEM_DISK)
+fi
+
 (
 	# Create GPT partition table
 	echo g;
