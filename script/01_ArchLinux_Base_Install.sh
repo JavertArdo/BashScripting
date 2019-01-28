@@ -115,7 +115,7 @@ then
 fi
 
 # Install base system
-bash -c "pacstrap /mnt base"
+bash -c "pacstrap /mnt base base-devel"
 
 # Generate fstab file
 bash -c "genfstab -U /mnt >> /mnt/etc/fstab"
@@ -146,4 +146,3 @@ bash -c "umount -R /mnt"
 
 echo "System has been already installed..."
 echo "Configure your favourite bootloader..."
-
