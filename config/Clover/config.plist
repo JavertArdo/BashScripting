@@ -12,50 +12,36 @@
 			<string></string>
 			<key>DefaultVolume</key>
 			<string>LastBootedVolume</string>
-			<key>#XMPDetection</key>
-			<true/>
 			<key>NeverHibernate</key>
 			<true/>
 			<key>Fast</key>
 			<false/>
 			<key>Timeout</key>
 			<integer>5</integer>
+			<key>Secure</key>
+			<false/>
+			<key>CustomLogo</key>
+			<false/>
 		</dict>
 		<key>GUI</key>
 		<dict>
-			<key>#Custom</key>
+			<key>Custom</key>
 			<dict>
 				<key>Entries</key>
 				<array>
 					<dict>
 						<key>AddArguments</key>
-						<string>-v</string>
+						<string></string>
 						<key>Arguments</key>
 						<string>initrd=/initramfs-linux.img root=PARTUUID=XXXXXXXXXXXXXXXX rw quiet</string>
 						<key>Hidden</key>
 						<false/>
 						<key>Path</key>
 						<string>\vmlinuz-linux</string>
-						<key>Title</key>
+						<key>FullTitle</key>
 						<string>Linux</string>
 						<key>Type</key>
-						<string>Linux</string>
-						<key>Volume</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>AddArguments</key>
-						<string>-v</string>
-						<key>Arguments</key>
-						<string></string>
-						<key>Hidden</key>
-						<false/>
-						<key>Path</key>
-						<string></string>
-						<key>Title</key>
-						<string>Windows 10</string>
-						<key>Type</key>
-						<string></string>
+						<string>Linux/LinuxKernel</string>
 						<key>Volume</key>
 						<string></string>
 					</dict>
@@ -63,7 +49,7 @@
 			</dict>
 			<key>CustomIcons</key>
 			<false/>
-			<key>#Hide</key>
+			<key>Hide</key>
 			<array>
 				<string>BOOTX64.EFI</string>
 			</array>
@@ -81,7 +67,7 @@
 				<key>Legacy</key>
 				<false/>
 				<key>Kernel</key>
-				<string>All</string>
+				<string>Newest</string>
 			</dict>
 			<key>ScreenResolution</key>
 			<string>1920x1080</string>
