@@ -33,8 +33,10 @@
 						<key>AddArguments</key>
 						<string></string>
 						<key>Arguments</key>
-						<string>initrd=/initramfs-linux.img root=PARTUUID=XXXXXXXXXXXXXXXX rw quiet</string>
+						<string>initrd=/intel-ucode.img initrd=/initramfs-linux.img root=PARTUUID=XXXXXXXXXXXXXXXX rw quiet</string>
 						<key>Hidden</key>
+						<false/>
+						<key>Ignore</key>
 						<false/>
 						<key>Path</key>
 						<string>\vmlinuz-linux</string>
@@ -43,7 +45,7 @@
 						<key>Type</key>
 						<string>Linux/LinuxKernel</string>
 						<key>Volume</key>
-						<string></string>
+						<string>PARTUUID EFI</string>
 					</dict>
 				</array>
 			</dict>
@@ -72,7 +74,7 @@
 			<key>ScreenResolution</key>
 			<string>1920x1080</string>
 			<key>Theme</key>
-			<string>flint</string>
+			<string></string>
 			<key>TextOnly</key>
 			<false/>
 		</dict>
