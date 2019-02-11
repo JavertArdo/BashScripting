@@ -1,0 +1,2 @@
+# Cleaning disk
+dd if=/dev/urandom of=/dev/sda bs=4096 status=progress
