@@ -33,7 +33,7 @@
 						<key>AddArguments</key>
 						<string></string>
 						<key>Arguments</key>
-						<string>initrd=/intel-ucode.img initrd=/initramfs-linux.img root=PARTUUID=XXXXXXXXXXXXXXXX rw quiet</string>
+						<string>initrd=/intel-ucode.img initrd=/initramfs-linux.img root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx rw add_efi_memmap</string>
 						<key>Hidden</key>
 						<false/>
 						<key>Ignore</key>
@@ -43,9 +43,9 @@
 						<key>FullTitle</key>
 						<string>Linux</string>
 						<key>Type</key>
-						<string>Linux/LinuxKernel</string>
+						<string>Linux</string>
 						<key>Volume</key>
-						<string>PARTUUID EFI</string>
+						<string>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</string>
 					</dict>
 				</array>
 			</dict>
