@@ -12,3 +12,6 @@ sudo pacman -Rcns
 
 # Pacman remove unnecessary packages
 sudo pacman -R $(pacman -Qdtq)
+
+# Unknown public key
+gpg --recv-key <public-key>
