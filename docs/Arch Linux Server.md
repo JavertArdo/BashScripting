@@ -52,7 +52,7 @@ mount /dev/sda1 /mnt/boot
 
 ## Install basic packages
 ```bash
-pacstrap /mnt base base-devel linux linux-firmware
+pacstrap /mnt base base-devel linux-lts linux-firmware
 ```
 
 ## Configure the system
@@ -125,7 +125,7 @@ pacman -S efibootmgr
 
 ### NVRAM registry
 ```bash
-efibootmgr --disk /dev/sdX --part Y --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx rw initrd=\initramfs-linux.img' --verbose
+efibootmgr --disk /dev/sdX --part Y --create --label "Arch Linux" --loader /vmlinuz-linux-lts --unicode 'root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx rw initrd=\initramfs-linux-lts.img' --verbose
 ```
 
 ## Reboot
